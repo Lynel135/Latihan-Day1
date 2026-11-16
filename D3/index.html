@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watermark Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Watermark Studio</h1>
+        <p>
+          Pick an image and a logo. <code>logo1.png</code> is stamped in the
+          bottom-left corner, <code>logo2.png</code> in the top-right.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Watermark controls">
+        <div class="field">
+          <label class="field__label" for="image-input">Image</label>
+          <input id="image-input" type="file" accept="image/*" />
+          <p class="field__hint" id="image-hint">Using image.jpg</p>
+        </div>
+
+        <fieldset class="field">
+          <legend class="field__label">Logo</legend>
+          <div class="logo-options" role="radiogroup" aria-label="Logo">
+            <label class="logo-option">
+              <input type="radio" name="logo" value="logo1.png" checked />
+              <span class="logo-option__name">logo1.png</span>
+              <span class="logo-option__place">bottom left</span>
+            </label>
+            <label class="logo-option">
+              <input type="radio" name="logo" value="logo2.png" />
+              <span class="logo-option__name">logo2.png</span>
+              <span class="logo-option__place">top right</span>
+            </label>
+            <label class="logo-option">
+              <input type="radio" name="logo" value="custom" />
+              <span class="logo-option__name">Your PNG</span>
+              <span class="logo-option__place" id="custom-name">choose file…</span>
+            </label>
+          </div>
+          <input id="logo-input" type="file" accept="image/png,image/webp,image/*" hidden />
+        </fieldset>
+
+        <div class="actions">
+          <button id="download" type="button">Download watermarked image</button>
+          <p id="status" class="status" role="status"></p>
+        </div>
+      </section>
+
+      <figure class="preview">
+        <canvas id="canvas" aria-label="Watermarked preview"></canvas>
+        <figcaption id="caption"></figcaption>
+      </figure>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

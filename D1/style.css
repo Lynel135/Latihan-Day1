@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.8;
+  outline: none;
+}
+
+:root {
+  font-family: 'Arial', sans-serif;
+  --primary: #22c55e;
+  --hover: #16a34a;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: min(960px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.navbar {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+  height: 80px;
+}
+
+.navbar .container,
+.navbar li,
+.navbar a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar .container {
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  list-style: none;
+}
+
+.navbar ul li {
+  padding: 0 1rem;
+}
+
+.navbar ul li:not(.language-form):hover {
+  background: var(--hover);
+}
+
+.navbar ul li a {
+  color: #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.article-image {
+  text-align: center;
+}
+
+.article-image img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.language-form select {
+  padding: .5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+}
+
+.article-section {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.article-title {
+  margin-bottom: .5rem;
+  font-size: 1.875rem;
+}
+
+.article-content {
+  color: #545454;
+}
+
+.article-content > p + p {
+  margin-top: 1.5rem;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  min-height: 60px;
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .navbar {
+    height: auto;
+    padding: .75rem 0;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .navbar ul {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar ul li {
+    min-height: 44px;
+    padding: 0 .6rem;
+  }
+
+  .article-section {
+    padding: 1.5rem 0;
+  }
+
+  .article-title {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
